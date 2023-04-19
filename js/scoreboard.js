@@ -1,12 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Scoreboard = void 0;
+const _ = require("lodash");
 class Scoreboard {
     constructor() {
         this.results = [];
     }
     addResult(newResult) {
         this.results.push(newResult);
+        let allCapsName = _.upperCase(newResult.playerName);
+        console.log(`${allCapsName}: ${newResult.score}`);
     }
     updateScoreboard() {
         let output = '<h2>Scoreboard</h2>';
